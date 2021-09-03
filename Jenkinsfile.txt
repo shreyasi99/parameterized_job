@@ -1,0 +1,19 @@
+pipelineJob('Build') {
+    description("A pipeline by DSL")
+    
+    parameters {
+        stringParam( "name","automation")
+    }
+    definition {
+    cpsScm {
+      scm {
+        git {
+          remote {
+            url('https://github.com/shreyasi99/Jenkinssci.git')
+          }
+          scriptPath('Jenkinsfile$name')
+       }
+     }
+    }
+   }
+}
