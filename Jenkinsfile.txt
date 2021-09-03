@@ -1,19 +1,21 @@
-pipelineJob('Builddemo') {
-    description("A pipeline by DSL")
-    
-    parameters {
-        stringParam( "name","automation")
-    }
-    definition {
-    cpsScm {
-      scm {
-        git {
-          remote {
-            url('https://github.com/shreyasi99/Jenkinssci.git')
-          }
-          scriptPath('Jenkinsfile.txt')
-       }
-     }
-    }
-   }
+pipeline {
+agent any
+
+stages {
+stage('Build') {
+steps {
+echo 'Building..'
+}
+}
+stage('Test') {
+steps {
+echo 'Testing..'
+}
+}
+stage('Deploy') {
+steps {
+echo 'Deploying....'
+}
+}
+}
 }
