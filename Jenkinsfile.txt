@@ -1,4 +1,4 @@
-pipelineJob('Build') {
+pipelineJob('Builddemo') {
     description("A pipeline by DSL")
     
     parameters {
@@ -11,7 +11,7 @@ pipelineJob('Build') {
           remote {
             url('https://github.com/shreyasi99/Jenkinssci.git')
           }
-          scriptPath('Jenkinsfile$name')
+          scriptPath('Jenkinsfile.txt')
        }
      }
     }
